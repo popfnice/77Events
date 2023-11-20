@@ -17,11 +17,11 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
-        onSuccess(); // Element corrigé
       } catch (err) {
         setSending(false);
         onError(err);
-      }
+      }finally{setSending(false)}
+  
     },
     [onSuccess, onError]
   );
